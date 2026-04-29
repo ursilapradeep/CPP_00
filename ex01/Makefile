@@ -1,0 +1,35 @@
+CXX = c++
+
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Iincludes
+
+NAME = phonebook
+
+SRC_DIR = srcs
+OBJ_DIR = objs
+
+SRC = main.cpp \
+	phonebook.cpp \
+	contact.cpp 
+	
+OBJS = $(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))
+
+all: $(NAME)
+
+$(NAME): $(OBJ_DIR) $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+clean:
+	rm -rf $(OBJ_DIR)
+
+fclean f: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
