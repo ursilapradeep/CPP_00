@@ -6,7 +6,7 @@
 /*   By: uvadakku <uvadakku@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 12:17:04 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/04/28 15:43:26 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/04/29 06:26:27 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,14 @@ int main(int argc, char **argv)
 		for (int i = 1; i < argc; i++)
 		{
 			std :: string str = argv[i];
+			//std::cout<< str;
+			//std::cout<<" ";
 			for (size_t j = 0; j < str.length(); j++)
 			{
-				std :: cout << std :: toupper(str[j]);
+				str[j]=std :: toupper(str[j]);
+				std :: cout << str[j];
 			}
+			std::cout<<" ";
 		}
 		std::cout << std::endl;
 	}
