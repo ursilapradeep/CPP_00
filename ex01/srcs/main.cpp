@@ -6,13 +6,15 @@
 /*   By: uvadakku <uvadakku@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 12:01:04 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/04/29 18:48:27 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/04/30 15:13:03 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <sstream>
 #include <string>
 #include "Contact.hpp"
+#include "PhoneBook.hpp"
 
 // std::string cmd;
 
@@ -36,18 +38,20 @@
 int main()
 {
 	Contact c;
+	PhoneBook pb;
 
-	c.setFirstName("John");
-	c.setLastName("Doe");
-	c.setNickName("Jd");
-	c.setPhoneNumber("1245357684");
-	c.setDarkestSecret("afraid of AI");
-
-	std::cout << c.getFirstName() << std::endl;
-	std::cout << c.getLastName() << std::endl;
-	std::cout << c.getNickName() << std::endl;
-	std::cout << c.getPhoneNumber() << std::endl;
-	std::cout << c.getDarkestSecret() << std::endl;
+	for (int i = 0; i < 9; i++)
+	{
+		std::stringstream ss;
+		ss << i;
+		c.setFirstName("Name" + ss.str());
+		c.setLastName("Last");
+		c.setNickName("Nickname");
+		c.setPhoneNumber("000");
+		c.setDarkestSecret("Secret");
+		pb.addContact(c);
+	}
+	pb.searchAll();
 	return 0;
 }
 

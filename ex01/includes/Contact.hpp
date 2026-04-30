@@ -6,13 +6,14 @@
 /*   By: uvadakku <uvadakku@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 17:57:25 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/04/29 18:50:52 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/04/30 15:11:37 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
+# include <iostream>
 # include <string>
 
 class Contact
