@@ -8,8 +8,8 @@ SRC_DIR = srcs
 OBJ_DIR = objs
 
 SRC = main.cpp \
-	phonebook.cpp \
-	contact.cpp 
+	PhoneBook.cpp \
+	Contact.cpp 
 	
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))
 
@@ -19,16 +19,16 @@ $(NAME): $(OBJ_DIR) $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 $(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
+	@mkdir -p $(OBJ_DIR)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(OBJ_DIR)
+	@rm -rf $(OBJ_DIR)
 
 fclean f: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 

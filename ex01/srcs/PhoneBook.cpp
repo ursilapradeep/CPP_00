@@ -6,7 +6,7 @@
 /*   By: uvadakku <uvadakku@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/30 11:45:43 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/04/30 15:17:56 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/05/04 14:04:19 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ void PhoneBook::searchOne(int index)const
 	std::cout << "FirstName : " << _contacts[index].getFirstName() << std::endl;
 	std::cout << "LastName : " << _contacts[index].getLastName() << std::endl;
 	std::cout << "NickName : " << _contacts[index].getNickName() << std::endl;
-	std::cout << "Phone number : " << _contacts[index].getPhoneNumber() << std::endl;
-	std::cout << "darkestSecret : " << _contacts[index].getPhoneNumber() << std::endl;
+	std::cout << "Phone Number : " << _contacts[index].getPhoneNumber() << std::endl;
+	std::cout << "DarkestSecret : " << _contacts[index].getDarkestSecret() << std::endl;
 }
 
 int PhoneBook::getCount() const {return _count; }

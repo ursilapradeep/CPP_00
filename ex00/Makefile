@@ -16,18 +16,18 @@ all : $(NAME)
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
-# Rule to compile .cpp files into .o files
-%.o: %.cpp
+# Rule to compile .cpp files into .o files in objs directory
+$(OBJ_DIR)/%.o: %.cpp | $(OBJ_DIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
+	@mkdir -p $(OBJ_DIR)
 
 clean:
-	rm -rf $(OBJ_DIR)
+	@rm -rf $(OBJ_DIR)
 
 fclean f: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re : fclean all
 
