@@ -5,7 +5,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = account
 
 SRCS = Account.cpp \
-							tests.cpp 
+	tests.cpp 
 
 OBJ_DIR	= objs
 
